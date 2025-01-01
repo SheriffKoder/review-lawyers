@@ -1,0 +1,16 @@
+/* Radial gradients for icon backgrounds */
+.bg-radial-primary {
+  background: radial-gradient(circle, rgba(23, 217, 255, 0.2), transparent);
+}
+
+.bg-radial-warning {
+  background: radial-gradient(circle, rgba(255, 152, 0, 0.2), transparent);
+}
+
+.bg-radial-success {
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.2), transparent);
+}
+
+.bg-radial-info {
+  background: radial-gradient(circle, rgba(33, 150, 243, 0.2), transparent);
+}

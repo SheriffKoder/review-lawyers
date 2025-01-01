@@ -1,0 +1,37 @@
+/* Base colors with improved contrast */
+:root {
+  /* Primary colors */
+  --color-primary: #17D9FF;
+  --color-primary-light: #4FE3FF;
+  --color-primary-dark: #0099CC;
+
+  /* Text colors - Light theme */
+  --text-light-primary: rgba(0, 0, 0, 0.95);    /* #0D0D0D - 4.5:1 ratio */
+  --text-light-secondary: rgba(0, 0, 0, 0.85);  /* #262626 - 4.5:1 ratio */
+  --text-light-tertiary: rgba(0, 0, 0, 0.75);   /* #404040 - 4.5:1 ratio */
+
+  /* Text colors - Dark theme */
+  --text-dark-primary: rgba(255, 255, 255, 0.95);    /* #F2F2F2 - 4.5:1 ratio */
+  --text-dark-secondary: rgba(255, 255, 255, 0.85);  /* #D9D9D9 - 4.5:1 ratio */
+  --text-dark-tertiary: rgba(255, 255, 255, 0.75);   /* #BFBFBF - 4.5:1 ratio */
+
+  /* Status colors with improved contrast */
+  --color-success: #2ECC71;      /* Green with 4.5:1 ratio */
+  --color-warning: #F1C40F;      /* Yellow with 4.5:1 ratio */
+  --color-error: #E74C3C;        /* Red with 4.5:1 ratio */
+  --color-info: #3498DB;         /* Blue with 4.5:1 ratio */
+}
+
+/* Dark mode overrides */
+.dark {
+  --text-primary: var(--text-dark-primary);
+  --text-secondary: var(--text-dark-secondary);
+  --text-tertiary: var(--text-dark-tertiary);
+}
+
+/* Light mode overrides */
+:root:not(.dark) {
+  --text-primary: var(--text-light-primary);
+  --text-secondary: var(--text-light-secondary);
+  --text-tertiary: var(--text-light-tertiary);
+}

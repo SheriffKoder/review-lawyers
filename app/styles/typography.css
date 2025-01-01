@@ -1,0 +1,36 @@
+/* Typography Scale */
+:root {
+  /* Font sizes */
+  --font-size-hero: 4rem;      /* 64px - Hero titles */
+  --font-size-h1: 3rem;        /* 48px - Main section headers */
+  --font-size-h2: 2.25rem;     /* 36px - Section headers */
+  --font-size-h3: 1.875rem;    /* 30px - Sub-section headers */
+  --font-size-h4: 1.5rem;      /* 24px - Card headers */
+  --font-size-base: 1rem;      /* 16px - Body text */
+  
+  /* Line heights */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+}
+
+/* Consistent header styles */
+.heading-hero {
+  @apply text-[length:var(--font-size-hero)] font-bold leading-[var(--line-height-tight)];
+}
+
+.heading-1 {
+  @apply text-[length:var(--font-size-h1)] font-bold leading-[var(--line-height-tight)];
+}
+
+.heading-2 {
+  @apply text-[length:var(--font-size-h2)] font-bold leading-[var(--line-height-tight)];
+}
+
+.heading-3 {
+  @apply text-[length:var(--font-size-h3)] font-bold leading-[var(--line-height-tight)];
+}
+
+.heading-4 {
+  @apply text-[length:var(--font-size-h4)] font-bold leading-[var(--line-height-tight)];
+}

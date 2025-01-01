@@ -1,0 +1,29 @@
+/* Search Animation */
+@keyframes searchGlow {
+  0% {
+    box-shadow: 0 0 5px rgba(23, 217, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(23, 217, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(23, 217, 255, 0.2);
+  }
+}
+
+/* Search Input Focus Animation */
+.search-focused {
+  animation: searchGlow 2s ease-in-out infinite;
+}
+
+/* Clear Button Animation */
+.search-clear {
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-has-value .search-clear {
+  transform: scale(1);
+  opacity: 1;
+}

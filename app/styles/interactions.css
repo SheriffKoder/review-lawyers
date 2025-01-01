@@ -1,0 +1,27 @@
+/* Base hover/focus styles */
+.hover-focus-ring {
+  @apply transition-all duration-300;
+  @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  @apply dark:focus-visible:ring-offset-black;
+}
+
+/* Button hover effects */
+.button-hover {
+  @apply hover:scale-[1.02] active:scale-[0.98];
+  @apply hover:shadow-lg hover:shadow-primary/25;
+  @apply transition-all duration-300;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply hover:scale-[1.02] hover:-translate-y-1;
+  @apply hover:shadow-lg hover:shadow-primary/20;
+  @apply transition-all duration-300;
+}
+
+/* Interactive element hover */
+.interactive-hover {
+  @apply hover:opacity-80;
+  @apply focus-visible:opacity-100;
+  @apply transition-opacity duration-200;
+}

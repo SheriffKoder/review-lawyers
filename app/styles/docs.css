@@ -1,0 +1,27 @@
+/* Quick Links hover effects */
+.quick-link {
+  @apply transition-all duration-300;
+}
+
+.quick-link:hover {
+  @apply transform -translate-y-1;
+  box-shadow: 0 10px 30px -10px rgba(23, 217, 255, 0.2);
+}
+
+/* Visual hierarchy styles */
+.quick-link.primary {
+  @apply border-primary/30 bg-primary/5;
+}
+
+.quick-link.primary:hover {
+  @apply border-primary bg-primary/10;
+}
+
+/* Icon animations */
+.quick-link-icon {
+  @apply transition-transform duration-300;
+}
+
+.quick-link:hover .quick-link-icon {
+  @apply scale-110;
+}

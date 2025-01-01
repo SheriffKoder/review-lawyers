@@ -1,0 +1,96 @@
+@import './styles/typography.css';
+@import './styles/spacing.css';
+@import './styles/animations.css';
+@import './styles/social.css';
+@import './styles/cards.css';
+@import './styles/process.css';
+@import './styles/search.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enable smooth scrolling globally */
+:root {
+  --color-primary: #17D9FF;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-black text-[var(--text-primary)] transition-colors font-normal;
+  letter-spacing: -0.01em;
+  background: radial-gradient(circle at center, rgba(23, 217, 255, 0.15) 0%, transparent 70%),
+              linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0.9) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* Add subtle animated gradient overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(23, 217, 255, 0.03) 50%,
+    transparent 100%
+  );
+  animation: gradient-shift 10s ease forwards;
+  animation-iteration-count: 1;
+  pointer-events: none;
+  width: 100%;
+}
+
+@keyframes gradient-shift {
+  0% {
+    transform: translateX(-0%);
+  }
+  25% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(-0%);
+
+  }
+  75% {
+    transform: translateX(50%);
+
+  }
+}
+
+/* Smooth scrolling for elements */
+* {
+  scroll-margin-top: 100px; /* Adds margin for fixed header */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(23, 217, 255, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 217, 255, 0.5);
+}
+
+.cardInput:hover {
+  border: 1px solid #17d8ff;
+}

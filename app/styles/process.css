@@ -1,0 +1,128 @@
+.wrapper {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.inner {
+  --w: 300px;
+  --h: 400px;
+  --translateZ: calc((var(--w) + var(--h)) * 0.3);
+  --rotateX: -5deg;
+  --perspective: 2000px;
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+  transform-style: preserve-3d;
+  transform: perspective(var(--perspective));
+  animation: rotating 30s linear infinite;
+}
+
+.inner:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rotating {
+  from {
+    transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(0);
+  }
+  to {
+    transform: perspective(var(--perspective)) rotateX(var(--rotateX)) rotateY(1turn);
+  }
+}
+
+.process-card {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(var(--color-card), 0.3);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(var(--translateZ));
+  backdrop-filter: blur(8px);
+  background: rgba(var(--color-card), 0.05);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 20px rgba(var(--color-card), 0.1);
+}
+
+.process-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(var(--color-card), 0.1) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.process-card:hover::before {
+  opacity: 1;
+}
+
+.process-card-hovered {
+  border-color: rgba(var(--color-card), 1);
+  background: rgba(var(--color-card), 0.15);
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(calc(var(--translateZ) * 1.2));
+  box-shadow: 
+    0 0 30px rgba(var(--color-card), 0.3),
+    0 0 60px rgba(var(--color-card), 0.1);
+}
+
+.process-card-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  color: rgb(var(--color-card));
+  text-align: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.process-card:hover .process-card-content {
+  opacity: 1;
+}
+
+.process-card-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 0 8px rgba(var(--color-card), 0.5));
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.process-card:hover .process-card-icon {
+  transform: scale(1.1);
+}
+
+.process-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(var(--color-card), 0.3);
+}
+
+.process-card-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.process-card:hover .process-card-description {
+  opacity: 0.9;
+  transform: translateY(0);
+}

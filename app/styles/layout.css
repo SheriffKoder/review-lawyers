@@ -1,0 +1,23 @@
+/* Layout styles */
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Prevent content jump on page load */
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Ensure main content takes remaining space */
+main {
+  flex: 1 0 auto;
+}
