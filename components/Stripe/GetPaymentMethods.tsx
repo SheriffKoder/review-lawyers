@@ -7,12 +7,12 @@ import { LoadingSpinner } from "../ui/LoadingSpinner";
 
 const brandLogos: { [key: string]: string } = {
   visa: "images/visa.png",
-  mastercard: "/images/mastercard.jpg",
+  mastercard: "/images/mastercard.png",
   amex: "/images/amex.jpg",
   discover: "/images/discover.jpg",
-  diners: "/images/diners.jpg",
-  jcb: "/images/jcb.jpg",
-  unionpay: "/images/unionpay.jpg",
+  diners: "/images/diners.png",
+  jcb: "/images/jcb.png",
+  unionpay: "/images/unionpay.png",
   other: "/images/otherBrand.jpg", // Default logo for unknown brands
 };
 

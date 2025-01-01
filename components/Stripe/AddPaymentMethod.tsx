@@ -4,6 +4,7 @@ import { useStripe, useElements, CardNumberElement, CardExpiryElement, CardCvcEl
 import { Button } from "../ui/Button";
 // import CustomCardInput from "./CustomCardInput";
 import styles from "./CardFlip.module.css"; // Import custom styles
+import { CreditCard } from "lucide-react";
 
 interface AddPaymentMethodProps {
     uid: string;
@@ -11,6 +12,17 @@ interface AddPaymentMethodProps {
     setUpdateMethods_stateHandler: ()=>void;
 
 }
+
+const brandLogos: { [key: string]: string } = {
+    visa: "images/visa.png",
+    mastercard: "/images/mastercard.png",
+    amex: "/images/amex.jpg",
+    discover: "/images/discover.jpg",
+    diners: "/images/diners.png",
+    jcb: "/images/jcb.png",
+    unionpay: "/images/unionpay.png",
+    other: "/images/otherBrand.jpg", // Default logo for unknown brands
+  };
 
 // Stripe styling options for Elements
 const stripeElementOptions = {
@@ -41,6 +53,12 @@ const AddPaymentMethod: React.FC<AddPaymentMethodProps> = ({uid, isStripeUser_st
     const [message, setMessage] = useState<string>("");
 
     const [isFlipped, setIsFlipped] = useState(false);
+    const [cardBrand, setCardBrand] = useState("unknown");
+
+    const handleCardChange = (event: any) => {
+        // Update the card brand dynamically as the user types
+        setCardBrand(event.brand || "unknown");
+      };
 
     const handleFocus = () => {
       setIsFlipped(true);
@@ -138,7 +156,7 @@ const AddPaymentMethod: React.FC<AddPaymentMethodProps> = ({uid, isStripeUser_st
             <form onSubmit={handleSubmit} className="w-full">
                 {/* <CardElement options={cardStyle} /> */}
 
-                <div className="flex w-full md:flex-row flex-col md:gap-[1rem] items-center justify-center ">
+                <div className="flex w-full md:flex-row flex-col md:gap-[0rem] items-center justify-center ">
                     
                     <div className={`${styles.cardContainer} h-[230px] w-[350px] md:order-2 md:my-auto md:w-[300px] md:h-[190px]`}>
                     <div className={`${styles.card} ${isFlipped ? styles.flipped : ""}`}>
@@ -190,20 +208,43 @@ const AddPaymentMethod: React.FC<AddPaymentMethodProps> = ({uid, isStripeUser_st
 
 
                         {/* Card Number */}
-                        <div style={{ marginBottom: "16px" }}>
+                        <div style={{ marginBottom: "16px" }} className="w-full">
                             <label htmlFor="card-number" className="text-white font-medium" style={{ display: "block", marginBottom: "8px" }}>
                             Card Number
                             </label> 
-                            <div className="cardInput bg-primary/10 focus-within:bg-primary/20 outline-none placeholder:text-sm placeholder:text-gray-400 border border-white/10"
-                            style={{
-                                padding: "10px",
-                                // border: "1px solid #ccc",
-                                borderRadius: "4px",
-                            }}
-                            >
-                            <CardNumberElement id="card-number" options={stripeElementOptions} />
+
+                            <div className="flex flex-row gap-2 items-center justify-center w-full">
+                                <div className="w-full cardInput bg-primary/10 focus-within:bg-primary/20 outline-none placeholder:text-sm placeholder:text-gray-400 border border-white/10"
+                                style={{
+                                    padding: "10px",
+                                    // border: "1px solid #ccc",
+                                    borderRadius: "4px",
+                                }}
+                                >
+                                <CardNumberElement id="card-number" options={stripeElementOptions} 
+                                        onChange={handleCardChange}
+    />
+                                </div>
+
+                                <div className="w-9 h-8 rounded-[5px] flex items-center justify-center overflow-hidden">
+
+                                    {cardBrand !== "unknown" && (
+                                        <img
+                                        src={brandLogos[cardBrand]}
+                                        alt={cardBrand}
+                                        className="h-8 w-8 bg-white"
+                                        />
+                                    )}
+
+                                    {cardBrand === "unknown" && (
+
+                                    <CreditCard className="w-5 h-5 text-primary" />
+                                    )}
+
+                                </div>
                             </div>
                         </div>
+
 
 
                         {/* Expiry date, CVC, Zip code */}
