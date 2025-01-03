@@ -21,23 +21,23 @@ export function TestimonialsSection() {
         <div className="grid gap-8 md:grid-cols-3">
           {[
             {
-              quote: "This platform improved our review management process by 50%!",
-              author: "Jane Doe",
-              role: "CEO, Luxury Rentals",
+              quote: "This platform helped us achieve our goals through keeping our reviews consistent and honest",
+              author: "Jordan School",
+              role: "President of juststayinc",
               delay: "0"
             },
             {
-              quote: "The AI-powered analysis helped us identify and resolve issues faster than ever.",
-              author: "John Smith",
-              role: "Operations Manager",
+              quote: "This platform was instrumental in optimizing our review management systems. It is sophisticated yet easy to use and provides fair and accurate assessments",
+              author: "Kishan Patel",
+              role: "Founder of Bayonne Vintage Rentals",
               delay: "100"
             },
-            {
-              quote: "Our rating improved from 4.2 to 4.8 in just three months.",
-              author: "Sarah Wilson",
-              role: "Restaurant Owner",
-              delay: "200"
-            }
+            // {
+            //   quote: "Our rating improved from 4.2 to 4.8 in just three months.",
+            //   author: "Sarah Wilson",
+            //   role: "Restaurant Owner",
+            //   delay: "200"
+            // }
           ].map((testimonial, index) => (
             <div
               key={index}

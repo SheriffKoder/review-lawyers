@@ -44,11 +44,11 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Contact</h3>
             <a 
-              href="mailto:support@example.com" 
+              href="mailto:islam@modernstaynj.com" 
               className="text-gray-400 hover:text-primary transition-colors flex items-center gap-2"
             >
               <Mail className="w-4 h-4" />
-              support@example.com
+              islam@modernstaynj.com
             </a>
           </div>
 

@@ -22,10 +22,10 @@ export default function RoadmapPage() {
         </div>
 
         <div className="space-y-16">
-          <RoadmapSection 
+          {/* <RoadmapSection 
             title="Recently Launched" 
             items={launched}
-          />
+          /> */}
           <RoadmapSection 
             title="In Progress" 
             items={inProgress}

@@ -66,8 +66,7 @@ export function HeroContent() {
           </h1>
           
           <p className="text-xl text-white/80 max-w-3xl mx-auto mt-6">
-            Protect your business reputation with AI-driven tools, legal expertise, and instant case handling.
-          </p>
+          Protect your business reputation with AI-driven tools, professional advisory services, and instant case handling.          </p>
         </div>
       </div>
 
