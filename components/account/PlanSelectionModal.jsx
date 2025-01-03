@@ -46,6 +46,7 @@ export function PlanSelectionModal({ isOpen, onClose, currentPlan,
     const currentDate = new Date();
     const paymentDate = new Date(currentDate); // Create a copy of the current date
     paymentDate.setMonth(paymentDate.getMonth() + 1); // Add one month
+    console.log(paymentDate);
 
     try {
       // Overwrite the document with the new data

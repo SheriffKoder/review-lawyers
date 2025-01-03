@@ -23,14 +23,14 @@ export const POST = async (req, res) => {
     const amountMap = {
       starter: 999, // $9.99 in cents
       professional: 1999, // $19.99 in cents
-      enterprise: 2999, // $29.99 in cents
+      "Professional+": 2999, // $29.99 in cents
       none: 0, // No cost
     };
-
+    
     const idMap = {
-      starter: "prod_RUjVvUsL00yfZ9",
-      professional: "prod_RUjVPsYcgH3r6Y",
-      enterprise: "prod_RUjVce2cceDC1J",
+      starter: process.env.STRIPE_PRODUCT_1_id,
+      professional: process.env.STRIPE_PRODUCT_2_id,
+      "Professional+": process.env.STRIPE_PRODUCT_3_id,
     };
 
     const amount = amountMap[plan];

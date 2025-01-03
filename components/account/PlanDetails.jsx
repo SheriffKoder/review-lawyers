@@ -147,18 +147,22 @@ export function PlanDetails({emptyUser, user, db, userRef, userData, updateUser}
           </div>
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2 text-white">
+
+          <div className="flex items-center gap-2 text-gray-300">
+
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>Dashboard Analytics</span>
+          </div>
+          <div className='pl-8 text-white/80 text-base w-full'>Basic Insights</div>
+
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Up to 500 review monitoring</span>
+            <span>Automatic Email Alerts</span>
           </div>
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>AI-powered response suggestions</span>
-          </div>
-          <div className="flex items-center gap-2 text-gray-300">
-            <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Multi-platform integration</span>
+            <span>Standard Support</span>
           </div>
         </div>
         </div>
@@ -188,29 +192,51 @@ export function PlanDetails({emptyUser, user, db, userRef, userData, updateUser}
         </div>
 
         <div className="space-y-2">
+          <p className='font-semibold text-white'>Everything in Starter +</p>
+
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Up to 500 review monitoring</span>
+            <span>Actionable Insights: Recommendations for improving reviews based on common trends.</span>
           </div>
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>AI-powered response suggestions</span>
+            <span>Global Review Management: Address reviews in multiple languages with AI translation and sentiment analysis.</span>
           </div>
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Multi-platform integration</span>
+            <span>Collaboration Tools: Ability to share reports and insights with team members or stakeholders.</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>Review Sentiment Analysis.</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>Multiple Platform Integration (3).</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>AI Insights.</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>Monthly Perfomance Reports.</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>AI Automated Generated Reports.</span>
           </div>
         </div>
         </div>
       )}
 
-      {userData.plan === "enterprise" && (
+      {userData.plan === "Professional+" && (
         <div className="bg-white/5 rounded-lg border border-white/10 p-4">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <Package className="w-5 h-5 text-primary" />
             <div>
-              <h4 className="text-white font-medium">Enterprise</h4>
+              <h4 className="text-white font-medium">Professional+</h4>
               <p className="text-sm text-gray-400">$29.99/month</p>
             </div>
           </div>
@@ -226,18 +252,39 @@ export function PlanDetails({emptyUser, user, db, userRef, userData, updateUser}
         </div>
 
         <div className="space-y-2">
+          <p className='font-semibold text-white'>Everything in Professional+</p>
+
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Up to 500 review monitoring</span>
+            <span>Advanced Sentiment Analysis: Break down reviews into themes or categories for deeper understanding.</span>
           </div>
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>AI-powered response suggestions</span>
+            <span>Unlimited Review Monitoring.</span>
           </div>
           <div className="flex items-center gap-2 text-gray-300">
             <CheckCircle className="w-4 h-4 text-primary" />
-            <span>Multi-platform integration</span>
+            <span>Priority Review Removal.</span>
           </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>AI Review Removal Assistance.</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>Custom Training Sessions for the team.</span>
+          </div>
+          <p className='font-semibold text-white pt-2'>All Platform Integration:</p>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>Priority API Support: Faster turnaround for custom API integrations or troubleshooting.</span>
+          </div>
+          <div className="flex items-center gap-2 text-gray-300">
+            <CheckCircle className="w-4 h-4 text-primary" />
+            <span>- Dedicated Support Rep & Account Manager
+            - Only for 10+ Listings.</span>
+          </div>
+         
         </div>
         </div>
       )}

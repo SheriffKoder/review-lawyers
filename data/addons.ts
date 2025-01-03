@@ -13,7 +13,7 @@ export const addons: Addon[] = [
       'Custom response templates',
       'Performance optimization'
     ],
-    compatiblePlans: ['professional', 'enterprise']
+    compatiblePlans: ['professional', 'Professional+']
   },
   {
     id: 'ai-removal-advocacy',
@@ -27,7 +27,7 @@ export const addons: Addon[] = [
       'Policy violation detection',
       'Success tracking'
     ],
-    compatiblePlans: ['starter', 'professional', 'enterprise']
+    compatiblePlans: ['starter', 'professional', 'Professional+']
   },
   {
     id: 'custom-api',
@@ -41,7 +41,7 @@ export const addons: Addon[] = [
       'Technical documentation',
       'Developer assistance'
     ],
-    compatiblePlans: ['professional', 'enterprise']
+    compatiblePlans: ['professional', 'Professional+']
   },
   {
     id: 'white-label-reports',
@@ -55,7 +55,7 @@ export const addons: Addon[] = [
       'Export capabilities',
       'Custom templates'
     ],
-    compatiblePlans: ['professional', 'enterprise']
+    compatiblePlans: ['professional', 'Professional+']
   },
   {
     id: 'custom-alerts',
@@ -69,7 +69,7 @@ export const addons: Addon[] = [
       'Custom notification rules',
       'Real-time alerts'
     ],
-    compatiblePlans: ['starter', 'professional', 'enterprise']
+    compatiblePlans: ['starter', 'professional', 'Professional+']
   },
   {
     id: 'vip-onboarding',
@@ -83,7 +83,7 @@ export const addons: Addon[] = [
       'Platform training',
       'Best practices guidance'
     ],
-    compatiblePlans: ['starter', 'professional', 'enterprise']
+    compatiblePlans: ['starter', 'professional', 'Professional+']
   },
   {
     id: 'strategy-sessions',
@@ -97,7 +97,7 @@ export const addons: Addon[] = [
       'Optimization recommendations',
       'Trend analysis'
     ],
-    compatiblePlans: ['professional', 'enterprise']
+    compatiblePlans: ['professional', 'Professional+']
   },
   {
     id: 'one-on-one-consultation',
@@ -111,7 +111,7 @@ export const addons: Addon[] = [
       'Implementation guidance',
       'Follow-up support'
     ],
-    compatiblePlans: ['starter', 'professional', 'enterprise']
+    compatiblePlans: ['starter', 'professional', 'Professional+']
   },
   {
     id: 'team-training',
@@ -125,7 +125,7 @@ export const addons: Addon[] = [
       'Training materials',
       'Q&A sessions'
     ],
-    compatiblePlans: ['professional', 'enterprise']
+    compatiblePlans: ['professional', 'Professional+']
   }
 ];
 

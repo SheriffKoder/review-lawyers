@@ -26,6 +26,11 @@ export function MainNav({ className }: MainNavProps) {
     //   description: 'Protect your restaurant\'s reputation'
     // },
     {
+      label: 'Review Advocacy',
+      href: '/reviewAvocacy',
+      description: 'Professional review defense service'
+    },
+    {
       label: 'Demo Dashboard',
       href: '/dashboard',
       description: 'Try our interactive demo dashboard'

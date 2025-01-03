@@ -10,9 +10,8 @@ export const pricingPlans: PricingPlan[] = [
     billing: 'monthly',
     description: 'Perfect for small businesses just getting started.',
     features: [
-      'Up to 100 review monitoring',
-      'Basic response templates',
-      'Email alerts',
+      'Dashboard Analytics: Basic Insights',
+      'Automatic Email Alerts',
       'Standard support',
       'Single platform integration'
     ]
@@ -24,34 +23,33 @@ export const pricingPlans: PricingPlan[] = [
     billing: 'monthly',
     description: 'Ideal for growing businesses with active review management.',
     features: [
-      'Up to 500 review monitoring',
-      'AI-powered response suggestions',
-      'Priority review alerts',
-      'Priority support',
-      'Multi-platform integration',
-      'Review removal assistance',
-      'Monthly performance reports',
-      'Custom response templates'
+      "Everything in Starter +",
+      "Actionable Insights: Recommendations for improving reviews based on common trends.",
+      "Global Review Management: Address reviews in multiple languages with AI translation and sentiment analysis.",
+      "Collaboration Tools: Ability to share reports and insights with team members or stakeholders.",
+      "Review Sentiment Analysis",
+      "Multiple Platform Integration (3)",
+      "AI Insights",
+      "Monthly Perfomance Reports",
+      "AI Automated Generated Reports"
     ],
     popular: true
   },
   {
-    id: 'enterprise',
-    name: 'Enterprise',
+    id: 'Professional+',
+    name: 'Professional+',
     price: 29.99,
     billing: 'monthly',
     description: 'Complete solution for large businesses and franchises.',
     features: [
-      'Unlimited review monitoring',
-      'Advanced AI analysis',
-      'Real-time alerts',
-      'Dedicated account manager',
-      'All platform integrations',
-      'Priority review removal',
-      'Custom API access',
-      'White-label reports',
-      'Team collaboration tools',
-      'Custom training sessions'
+      'Everything in Professional +',
+      'Advanced Sentiment Analysis: Break down reviews into themes or categories for deeper understanding.',
+      'Unlimited Review Monitoring',
+      'Priority Review Removal',
+      'AI Review Removal Assistance',
+      'Custom Training Sessions for the team',
+      'All Platform Integration: Priority API Support: Faster turnaround for custom API integrations or troubleshooting.',
+      'Dedicated Support Rep & Account Manager: Only for 10+ Listings',
     ]
   }
 ];

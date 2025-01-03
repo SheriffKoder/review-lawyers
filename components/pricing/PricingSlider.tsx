@@ -7,7 +7,7 @@ interface PricingSliderProps {
 }
 
 export function PricingSlider({ onChange, className }: PricingSliderProps) {
-  const [value, setValue] = useState(27);
+  const [value, setValue] = useState(1);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = parseInt(e.target.value);

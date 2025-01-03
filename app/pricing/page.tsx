@@ -9,7 +9,7 @@ import { FAQSection } from '@/components/pricing/FAQSection';
 
 export default function PricingPage() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annually'>('monthly');
-  const [propertyCount, setPropertyCount] = useState(27);
+  const [propertyCount, setPropertyCount] = useState(1);
 
   return (
     <main className="pt-24 pb-16">

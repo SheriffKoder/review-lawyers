@@ -24,9 +24,9 @@ export function PricingCard({ plan, billingPeriod, propertyCount }: PricingCardP
   // Calculate additional properties pricing
   const includedProperties = (() => {
     switch (plan.id) {
-      case 'starter': return 2;
-      case 'professional': return 15;
-      case 'enterprise': return 50;
+      case 'starter': return 1;
+      case 'professional': return 1;
+      case 'Professional+': return 1;
       default: return 0;
     }
   })();
@@ -35,7 +35,7 @@ export function PricingCard({ plan, billingPeriod, propertyCount }: PricingCardP
     switch (plan.id) {
       case 'starter': return 4.99;
       case 'professional': return 9.99;
-      case 'enterprise': return 14.99;
+      case 'Professional+': return 14.99;
       default: return 0;
     }
   })();
@@ -50,7 +50,7 @@ export function PricingCard({ plan, billingPeriod, propertyCount }: PricingCardP
     : null;
 
   const handleAction = () => {
-    if (plan.id === 'enterprise') {
+    if (plan.id === 'Professional+') {
       // For enterprise plan, show consultation modal
       return;
     }
@@ -113,8 +113,8 @@ export function PricingCard({ plan, billingPeriod, propertyCount }: PricingCardP
           )}
 
           <div className="mt-4 space-y-2">
-            <p className="text-sm text-gray-400">
-              Includes {includedProperties} properties
+            <p className="text-sm text-primary">
+              {/* Includes {includedProperties} properties */}
             </p>
             {additionalProperties > 0 && (
               <p className="text-sm text-primary">
@@ -147,7 +147,7 @@ export function PricingCard({ plan, billingPeriod, propertyCount }: PricingCardP
           ))}
         </ul>
 
-        {plan.id === 'enterprise' ? (
+        {plan.id === 'Professional+' ? (
           <ConsultationButton className="w-full" />
         ) : (
           <Button 

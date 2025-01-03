@@ -103,7 +103,7 @@ export default function ApiDocsPage() {
                   </li>
                   <li className="flex items-center gap-2 text-gray-300">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    Enterprise: Unlimited requests
+                    Professional+: Unlimited requests
                   </li>
                 </ul>
               </div>
