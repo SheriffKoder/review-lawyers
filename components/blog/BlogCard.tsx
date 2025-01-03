@@ -10,7 +10,7 @@ interface BlogCardProps {
 export function BlogCard({ post }: BlogCardProps) {
   return (
     <article className={cn(
-      "group bg-white dark:bg-gray-800 rounded-xl overflow-hidden",
+      "group bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden",
       "transform transition-all duration-300",
       "hover:shadow-xl hover:shadow-primary/10",
       "hover:-translate-y-1",

@@ -34,7 +34,7 @@ export function useTrial() {
         businessName: data.businessName,
         businessType: data.businessType,
         startDate: new Date().toISOString(),
-        endDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString(), // 14 days
+        endDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 14 days
         status: 'active'
       };
 

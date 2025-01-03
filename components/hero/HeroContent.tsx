@@ -2,6 +2,7 @@ import React from 'react';
 import { Brain, Shield, Star, Zap } from 'lucide-react';
 import { FeatureCard } from './FeatureCard';
 import { cn } from '@/utils/cn';
+import HeroIcon from './HeroIcon';
 
 export function HeroContent() {
   const features = [
@@ -25,11 +26,10 @@ export function HeroContent() {
   return (
     <div className="text-center space-y-16">
       {/* AI Brain Logo Animation */}
-      <div className="flex items-center justify-center animate-fade-in pt-8">
+      {/* <div className="flex items-center justify-center animate-fade-in pt-8">
         <div className="relative">
           <Brain className="h-16 w-16 text-primary animate-pulse" />
           
-          {/* Neural Network Effect */}
           <div className="absolute inset-0 h-16 w-16">
             <div className="absolute inset-0 animate-ping opacity-20 rounded-full border-2 border-primary" />
             <div className="absolute inset-0 animate-pulse opacity-30">
@@ -46,6 +46,10 @@ export function HeroContent() {
             </div>
           </div>
         </div>
+      </div> */}
+      <div className="flex items-center justify-center animate-fade-in pt-[7rem] min-h-[20vh]">
+        <HeroIcon />
+
       </div>
       
       {/* Main Heading */}

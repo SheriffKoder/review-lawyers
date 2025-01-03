@@ -58,7 +58,7 @@ module.exports = {
           '0%': { transform: 'translateX(-0%)' },
           '25%': { transform: 'translateX(-50%)' },
           '50%': { transform: 'translateX(0%)' },
-          '75%': { transform: 'translateX(50%)' }
+          '75%': { transform: 'translateX(0%)' }
 
 
 

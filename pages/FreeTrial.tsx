@@ -234,7 +234,7 @@ export default function FreeTrial() {
                   <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
                 </div>
                 <p className="text-lg text-primary font-medium">
-                  14-day free trial with full access to all features
+                  7-day free trial with full access to all features
                 </p>
               </div>
             </div>

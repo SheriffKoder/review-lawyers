@@ -88,7 +88,7 @@ export function PricingCard({ plan, billingPeriod, propertyCount }: PricingCardP
         </div>
       )}
       
-      <div className="relative">
+      <div className="relative flex flex-col  h-full">
         <h2 className="text-2xl font-bold text-white mb-2 transition-colors group-hover:text-primary">
           {plan.name}
         </h2>
@@ -155,7 +155,7 @@ export function PricingCard({ plan, billingPeriod, propertyCount }: PricingCardP
             fullWidth
             variant={plan.popular ? 'primary' : 'secondary'}
             className={cn(
-              "transform transition-all duration-300",
+              "transform transition-all duration-300 mt-auto",
               "group-hover:scale-[1.02]",
               "group-hover:shadow-lg",
               plan.popular ? "group-hover:shadow-primary/20" : "group-hover:shadow-white/10"

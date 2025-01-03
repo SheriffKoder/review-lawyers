@@ -17,7 +17,7 @@ export const doCreateUserWithEmailAndPassword = async (userData) => {
     // Calculate the date 14 days from today
     const currentDate = new Date();
     const futureDate = new Date(currentDate); // Create a copy of the current date
-    futureDate.setDate(futureDate.getDate() + 14); // Add 14 days
+    futureDate.setDate(futureDate.getDate() + 7); // Add 7 days
 
 
 

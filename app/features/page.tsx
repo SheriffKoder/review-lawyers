@@ -76,10 +76,10 @@ export default function FeaturesPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Layers className="h-16 w-16 text-primary mx-auto mb-6" />
-          <h1 className="text-4xl font-bold text-black dark:text-white mb-4">
+          <h1 className="text-4xl font-bold text-white dark:text-white mb-4">
             Features
           </h1>
-          <p className="text-xl text-black/80 dark:text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-white/80 dark:text-white/80 max-w-3xl mx-auto">
             Discover our comprehensive suite of review management tools.
           </p>
         </div>

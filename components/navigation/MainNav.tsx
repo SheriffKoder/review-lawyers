@@ -48,16 +48,16 @@ export function MainNav({ className }: MainNavProps) {
       href: '/roadmap',
       description: 'See what we\'re building'
     },
-    {
-      label: 'AI Analysis',
-      href: '/features#ai-analysis',
-      description: 'Advanced review analysis with AI'
-    },
-    {
-      label: 'Review Defense',
-      href: '/features#review-defense',
-      description: 'Professional review removal service'
-    }
+    // {
+    //   label: 'AI Analysis',
+    //   href: '/features#ai-analysis',
+    //   description: 'Advanced review analysis with AI'
+    // },
+    // {
+    //   label: 'Review Defense',
+    //   href: '/features#review-defense',
+    //   description: 'Professional review removal service'
+    // }
   ];
 
   return (
@@ -67,11 +67,11 @@ export function MainNav({ className }: MainNavProps) {
       <NavLink to="/pricing">Pricing</NavLink>
       <NavLink to="/blog">Blog</NavLink>
       
-      <SearchBar 
+      {/* <SearchBar 
         className="ml-4 w-64" 
         placeholder="Search features, docs..."
         onSearch={console.log}
-      />
+      /> */}
     </nav>
   );
 }

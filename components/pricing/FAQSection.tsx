@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: 'Is there a free trial?',
-    answer: 'Yes! We offer a 14-day free trial on all plans. No credit card required.'
+    answer: 'Yes! We offer a 7-day free trial on all plans. No credit card required.'
   },
   {
     question: 'What payment methods do you accept?',

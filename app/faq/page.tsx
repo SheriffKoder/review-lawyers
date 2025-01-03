@@ -10,7 +10,7 @@ const FAQ_SECTIONS = [
     items: [
       {
         question: 'How does the free trial work?',
-        answer: 'Our 14-day free trial gives you full access to all features with no credit card required. You can manage up to 5 properties and experience our AI-powered review defense system firsthand.'
+        answer: 'Our 7-day free trial gives you full access to all features with no credit card required. You can manage up to 5 properties and experience our AI-powered review defense system firsthand.'
       },
       {
         question: 'What happens after the trial ends?',

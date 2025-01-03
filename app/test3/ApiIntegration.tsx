@@ -92,29 +92,38 @@ export default function ApiIntegrationBox () {
   }, []);
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-gray-900/75 rounded-lg shadow-lg backdrop-blur-md">
-      {/* Buttons */}
-      <div className="flex space-x-4 mb-4">
-        <button
-          className={`px-4 py-2 rounded-lg ${
-            state.type === "PMS"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-          }`}
-          onClick={() => handleButtonClick("PMS")}
-        >
-          PMS
-        </button>
-        <button
-          className={`px-4 py-2 rounded-lg ${
-            state.type === "OTA"
-              ? "bg-blue-500 text-white"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-          }`}
-          onClick={() => handleButtonClick("OTA")}
-        >
-          OTA
-        </button>
+    <div className="text-white mx-2 md:mx-auto p-6 w-full max-w-[500px] bg-white/5 border border-white/10 rounded-lg shadow-lg backdrop-blur-md">
+      
+      <h2 className="text-white text-2xl font-semibold mb-4">Add/Reconnect Listings</h2> 
+      <p className="text-white/80 text-sm pb-4 border-b border-white/10">Connect your listings to our platform to start receiving reviews and insights.</p>
+      
+      <div className="flex flex-row flex-wrap gap-2 w-full mt-8">
+        <p className="text-white text-sm">What would you like to connect to?</p>
+
+        {/* Buttons */}
+        <div className=" w-full flex space-x-4 mb-8">
+          <button
+            className={`px-4 py-2 rounded-lg w-full text-white border bg-white/10 border-white/10 hover:bg-primary/90 hover:text-black ${
+              state.type === "PMS"
+                ? "bg-primary/90 text-black"
+                : " bg-white/10"
+            }`}
+            onClick={() => handleButtonClick("PMS")}
+          >
+            PMS
+          </button>
+          <button
+            className={`px-4 py-2 rounded-lg w-full text-white border bg-white/10 border-white/10 hover:bg-primary/90 hover:text-black ${
+              state.type === "OTA"
+                ? "bg-primary/90 text-black"
+                : " bg-white/10"
+            }`}
+            onClick={() => handleButtonClick("OTA")}
+          >
+            OTA
+          </button>
+        </div>
+
       </div>
 
       {/* Dropdown */}
@@ -134,7 +143,7 @@ export default function ApiIntegrationBox () {
           >
             <option value="">-- Select --</option>
             <option value="Hostaway">Hostaway</option>
-            <option value="TestAPI">TestAPI</option>
+            {/* <option value="TestAPI">TestAPI</option> */}
           </select>
         </div>
       )}
@@ -195,19 +204,23 @@ export default function ApiIntegrationBox () {
               placeholder="Enter API Key"
             />
           </div>
+          <div className="w-full border border-white/10 rounded-lg h-[100px] mb-8 p-4 flex flex-wrap items-center justify-start">
+            <p className="text-white/80 text-sm">Use your Hostaway Account ID and API key to fetch your properties and reviews.</p>
+            <a href="https://dashboard.hostaway.com/settings/hostaway-api" className="cursor-pointer text-primary/80 text-sm">https://dashboard.hostaway.com/settings/hostaway-api</a>
+          </div>
         </div>
       )}
 
       {/* Action Buttons */}
       <div className="flex space-x-4">
         <button
-          className="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600"
+          className="px-4 py-2 bg-white/10 border border-white/10 text-gray-300 rounded-lg hover:bg-white/30"
           onClick={handleCancel}
         >
           Cancel
         </button>
         <button
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+          className="px-4 py-2 bg-primary/90 text-black hover:bg-primary/80 rounded-lg hover:text-white"
           onClick={handleConnect}
           disabled={
             !state.type ||

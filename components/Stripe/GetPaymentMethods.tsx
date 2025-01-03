@@ -75,7 +75,7 @@ const GetPaymentMethods: React.FC<GetPaymentMethodsProps> = ({updateMethods}) =>
 
       } else {
         const errorData = await response.json();
-        setMessage(`Error creating customer: ${errorData.error}`);
+        // setMessage(`Error creating customer: ${errorData.error}`);
       }
 
     } catch (error) {

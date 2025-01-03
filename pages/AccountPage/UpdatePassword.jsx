@@ -49,40 +49,40 @@ const UpdatePasswordForm = () => {
   return (
     <form onSubmit={handlePasswordUpdate} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">
+                <label className="block font-medium text-gray-400 mb-2">
                   Current Password
                 </label>
                 <input
                   type="password"
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/10 text-white"
+                  className="w-full px-4 py-2 rounded-lg bg-black/50 border text-sm  border-white/10 text-white"
                   placeholder="Confirm your current password"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">
+                <label className="block  font-medium text-gray-400 mb-2">
                   New Password
                 </label>
                 <input
                   type="password"
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/10 text-white"
+                  className="w-full px-4 py-2 rounded-lg bg-black/50 border text-sm border-white/10 text-white"
                   placeholder="Enter the new password"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-400 mb-2">
+                <label className="block  font-medium text-gray-400 mb-2">
                   Confirm New Password
                 </label>
                 <input
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-2 rounded-lg bg-black/50 border border-white/10 text-white"
+                  className="w-full px-4 py-2 rounded-lg bg-black/50 border text-sm border-white/10 text-white"
                   placeholder="Re-enter the new password"
                 />
               </div>

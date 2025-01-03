@@ -17,12 +17,12 @@ export function BlogHeader() {
           Expert insights and strategies for managing your online reputation.
         </p>
       </div>
-      <Button 
+      {/* <Button 
         onClick={() => redirect('/free-trial')}
         className="transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
       >
         Start Free Trial
-      </Button>
+      </Button> */}
     </div>
   );
 }
