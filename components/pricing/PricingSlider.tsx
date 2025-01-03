@@ -86,7 +86,7 @@ export function PricingSlider({ onChange, className }: PricingSliderProps) {
         As you grow beyond the included number of properties,
         <br />
         <span className="text-primary font-medium">
-          you only pay for additional properties with check-ins
+          you only pay for additional properties
         </span>
         {' '}in the past 30 days.
       </p>

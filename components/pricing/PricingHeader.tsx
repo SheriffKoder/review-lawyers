@@ -15,7 +15,7 @@ export function PricingHeader({ billingPeriod, onBillingPeriodChange }: PricingH
   const discount = Math.round(ANNUAL_DISCOUNT * 100);
 
   return (
-    <div className="text-center mb-16">
+    <div className="text-center mb-16 relative">
       <div className="inline-block group">
         <CreditCard className="h-16 w-16 text-primary mx-auto mb-6 transform transition-transform group-hover:scale-110" />
       </div>
@@ -67,7 +67,7 @@ export function PricingHeader({ billingPeriod, onBillingPeriodChange }: PricingH
               "flex items-center gap-2"
             )}
           >
-            <Calculator className="w-5 h-5" />
+            <Calculator className="w-5 h-5"  />
             ROI Calculator
           </button>
 

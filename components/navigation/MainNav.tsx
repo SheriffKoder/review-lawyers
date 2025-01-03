@@ -48,6 +48,19 @@ export function MainNav({ className }: MainNavProps) {
       href: '/roadmap',
       description: 'See what we\'re building'
     },
+  ];
+
+  const pricingItems = [
+    {
+      label: 'Plans & Pricing',
+      href: '/pricing',
+      description: 'View our subscription plans'
+    },
+    {
+      label: 'Add-Ons',
+      href: '/addOns',
+      description: 'Enhance your plan with premium features'
+    },
     // {
     //   label: 'AI Analysis',
     //   href: '/features#ai-analysis',
@@ -64,7 +77,8 @@ export function MainNav({ className }: MainNavProps) {
     <nav className={cn("flex items-center gap-4", className)}>
       <NavDropdown label="Services" items={servicesItems} />
       <NavDropdown label="Features" items={featuresItems} />
-      <NavLink to="/pricing">Pricing</NavLink>
+      <NavDropdown label="Pricing" items={pricingItems} />
+      {/* <NavLink to="/pricing">Pricing</NavLink> */}
       <NavLink to="/blog">Blog</NavLink>
       
       {/* <SearchBar 

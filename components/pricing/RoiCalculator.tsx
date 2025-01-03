@@ -38,8 +38,9 @@ export function RoiCalculator({ isOpen, onClose }: RoiCalculatorProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="relative w-full max-w-3xl bg-black/90 rounded-2xl border border-white/10 p-6">
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    onClick={onClose}>
+      <div  onClick={(e) => e.stopPropagation()} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl bg-black/90 rounded-2xl border border-white/10 p-6">
         <div className="mb-8">
           <h2 className="text-2xl font-bold text-white mb-2">ROI Calculator</h2>
           <p className="text-gray-400">See how much revenue you could protect with our review management system</p>
