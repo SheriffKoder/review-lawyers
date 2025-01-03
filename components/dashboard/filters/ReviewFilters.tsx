@@ -50,7 +50,7 @@ export function ReviewFilters({
 
 
   function filterItemsByMinRating(items: any[], minRating: number | null | string) {
-    console.log(minRating);
+    // console.log(minRating);
     setRating(minRating);
     if (!Array.isArray(items)) {
       throw new Error("The 'items' parameter must be an array.");
@@ -63,7 +63,7 @@ export function ReviewFilters({
       filteredItems = filteredItems.filter((item) => item.rating === null);
     } else if (minRating === null) {
       // Return the array as it is for minRating null
-      console.log(filteredItems);
+      // console.log(filteredItems);
       reviews_temp_switch(filteredItems);
       return filteredItems;
 
@@ -72,13 +72,13 @@ export function ReviewFilters({
       filteredItems = filteredItems.filter((item) => item.rating === (minRating * 2));
     }
 
-    console.log(filteredItems);
+    // console.log(filteredItems);
     reviews_temp_switch(filteredItems);
     return filteredItems;
   }
 
   useEffect(() => {
-    console.log("temp changed, this is stars")
+    // console.log("temp changed, this is stars")
   }, [tempReviews])
 
 
@@ -94,7 +94,7 @@ export function ReviewFilters({
       // Add the platform if it doesn't exist
       setSelectedPlatforms([...selectedPlatforms, platform]);
     }
-    console.log(selectedPlatforms);
+    // console.log(selectedPlatforms);
   }
 
   useEffect(() => {
@@ -139,7 +139,7 @@ export function ReviewFilters({
     
 
     let filteredListings = filterListingsByPlatforms(listings, selectedPlatforms);
-    console.log(filteredListings);
+    // console.log(filteredListings);
     listings_temp_switch(filteredListings);
 
   }, [selectedPlatforms])

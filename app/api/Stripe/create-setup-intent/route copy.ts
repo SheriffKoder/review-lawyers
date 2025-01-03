@@ -37,7 +37,7 @@ interface CreateSetupIntentRequest extends Request {
         // get the customer from the collection, previously saved from create-customer.js
         const userRef = doc(db, "stripeCustomers", uid);
         const customerDoc = await getDoc(userRef);
-        console.log(customerDoc.exists);
+        // console.log(customerDoc.exists);
 
         // check if the customer does not exist
         if (!customerDoc.exists) {

@@ -21,8 +21,8 @@ const HeroIcon = () => {
             <Lottie 
             //@ts-ignore    
             options={defaultOptions}
-            height={200}
-            width={200}
+            height={400}
+            width={400}
         />
 
   )

@@ -30,7 +30,7 @@ const AddPaymentMethod: React.FC<AddPaymentMethodProps> = ({uid}) => {
 
             // recieve back a client secred
             const { clientSecret, stripeCustomerId } = await response.json();
-            console.log(clientSecret, stripeCustomerId);
+            // console.log(clientSecret, stripeCustomerId);
             
             if (!stripe || !elements) {
                 throw new Error("Stripe has not loaded yet.");

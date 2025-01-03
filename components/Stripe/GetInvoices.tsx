@@ -68,7 +68,7 @@ const Invoices: React.FC = () => {
         }
 
         const { invoices } = await response.json();
-        console.log(invoices);
+        // console.log(invoices);
         setInvoices(invoices);
       } catch (err) {
         setError("Unexpected error occurred.");

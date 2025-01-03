@@ -29,7 +29,7 @@ export const POST = async (
 
     const {uid} = await req.json();
 
-    console.log(uid);
+    // console.log(uid);
 
   try {
 
@@ -39,7 +39,7 @@ export const POST = async (
     // get the customer from the collection, previously saved from create-customer.js
     const userRef = doc(db, "stripeCustomers", uid);
     const customerDoc = await getDoc(userRef);
-    console.log(customerDoc.exists);
+    // console.log(customerDoc.exists);
 
     // check if the customer does not exist
     if (!customerDoc.exists) {

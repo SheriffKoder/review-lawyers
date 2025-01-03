@@ -55,7 +55,7 @@ const GetPaymentMethods: React.FC = () => {
 
         // store the fetched payment methods in the state in the parent component.
         // 
-        console.log(paymentMethods.paymentMethods.data);
+        // console.log(paymentMethods.paymentMethods.data);
         setPaymentMethods(paymentMethods.paymentMethods.data);
 
       } else {

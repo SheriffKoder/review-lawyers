@@ -89,7 +89,7 @@ export function LoginForm() {
     // firebase submit
     const onSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
-      console.log(formData.password);
+      // console.log(formData.password);
 
       let response;
 
@@ -100,7 +100,7 @@ export function LoginForm() {
           response = await doSignInWithEmailAndPassword(formData.email, formData.password)
 
 
-          console.log(response);
+          // console.log(response);
           // console.log("success");
 
         } catch (err:any) {

@@ -34,7 +34,7 @@ export function PlanSelectionModal({ isOpen, onClose, currentPlan,
 
 
   const handlePlanSelect = async (planId) => {
-    console.log(planId);
+    // console.log(planId);
     if (planId === currentPlan) {
       onClose();
       return;
@@ -72,7 +72,7 @@ export function PlanSelectionModal({ isOpen, onClose, currentPlan,
 
       const userRef_stripe = doc(db, "stripeCustomers", uid);
       const customerDoc = await getDoc(userRef_stripe);
-      console.log(customerDoc.exists);
+      // console.log(customerDoc.exists);
 
       // check if the customer does not exist
       if (!customerDoc.exists) {
@@ -108,9 +108,9 @@ export function PlanSelectionModal({ isOpen, onClose, currentPlan,
 
       const subscriptionResult = await response.json();
 
-      console.log(subscriptionResult.message); // Log success message
-      if (subscriptionResult.chargeId) console.log("Charge ID:", subscriptionResult.chargeId);
-      if (subscriptionResult.subscriptionId) console.log("Subscription ID:", subscriptionResult.subscriptionId);
+      // console.log(subscriptionResult.message); // Log success message
+      // if (subscriptionResult.chargeId) console.log("Charge ID:", subscriptionResult.chargeId);
+      // if (subscriptionResult.subscriptionId) console.log("Subscription ID:", subscriptionResult.subscriptionId);
 
       /////////////////////////////////////////////////////////////////////
       /////////////////////////////////////////////////////////////////////

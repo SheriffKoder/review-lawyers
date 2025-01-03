@@ -21,23 +21,52 @@ const MultiSelectDropdown = ({ listings, tempListings, listings_temp_switch }: L
   const [selectedListings, setSelectedListings] = useState<Listing[]>([]);
 
   const handleToggle = (listing: Listing) => {
-    if (selectedListings.includes(listing)) {
+
+    if (selectedListings.length === listings.length) {
+        setSelectedListings([]);
+    }   
+
+    // if (selectedListings.includes(listing)) {
       // Remove listing from selected
-      setSelectedListings(
-        selectedListings.filter((item) => item !== listing)
-      );
-    } else {
+    //   setSelectedListings(
+        // selectedListings.filter((item) => item !== listing)
+    //   );
+    // } else {
       // Add listing to selected
-      setSelectedListings([...selectedListings, listing]);
+
+        // Check if the listing is already selected
+        const isAlreadySelected = selectedListings.some(
+            (item) => item.id === listing.id
+        );
+
+        //   console.log("Already selected:", isAlreadySelected);
+
+        if (isAlreadySelected) {
+            // Remove the listing if it exists
+            const temp = selectedListings.filter((item) => item.id !== listing.id);
+            // console.log("After removal:", temp);
+            setSelectedListings(temp);
+
+            // Call the function with the updated array
+            listings_temp_switch(temp);
+        } else {
+            // Add the listing if it doesn't exist
+            const temp = [...selectedListings, listing];
+            // console.log("After addition:", temp);
+            setSelectedListings(temp);
+
+            // Call the function with the updated array
+            listings_temp_switch(temp);
+        }
+        
+
+        listings_temp_switch(selectedListings);
+    };
+
+    const clearListings = () => {
+        setSelectedListings([]);
+        listings_temp_switch(listings);
     }
-
-    listings_temp_switch(selectedListings);
-  };
-
-  const clearListings = () => {
-    setSelectedListings([]);
-    listings_temp_switch(listings);
-  }
 
 //   const handleClose = () => {
 //     if (onClose && typeof onClose === "function") {

@@ -16,7 +16,7 @@ export const POST = async (
 ): Promise<any> => {
 
     const {paymentMethodId, customerId} = await req.json();
-    console.log(paymentMethodId, customerId);
+    // console.log(paymentMethodId, customerId);
     // Attach the payment method to the customer
     // await stripe.paymentMethods.attach(paymentMethodId, { customer: customerId });
   

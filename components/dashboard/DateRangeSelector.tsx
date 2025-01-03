@@ -116,11 +116,11 @@ export function DateRangeSelector({ onRangeChange, className, reviews_temp_switc
   
   const handleRangeSelect = (range: typeof PRESET_RANGES[number]) => {
     setSelectedRange(range.label);
-    console.log(range.label);
+    // console.log(range.label);
 
     if (range.days !== 'custom') {
       let temp_reviews = filterReviewsByDate(tempReviews, range.label);
-      console.log(temp_reviews);
+      // console.log(temp_reviews);
       reviews_temp_switch(temp_reviews);
     }
 
@@ -151,12 +151,12 @@ export function DateRangeSelector({ onRangeChange, className, reviews_temp_switc
     };
     setCustomDates(newDates);
     onRangeChange(newDates);
-    console.log(newDates);
+    // console.log(newDates);
 
     const {end, start} = newDates;
 
     let temp_reviews = filterReviewsByDateRange(start, end);
-    console.log(temp_reviews);
+    // console.log(temp_reviews);
     reviews_temp_switch(temp_reviews);
     
 

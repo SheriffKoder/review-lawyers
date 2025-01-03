@@ -62,7 +62,7 @@ export default function DashboardPage() {
   }
 
   const listings_temp_switch = (input: any[]) => {
-    console.log(input);
+    // console.log(input);
     // Handle single listing case
     const listingsToSet = !Array.isArray(input) ? [input] : input;
     setListings_temp(listingsToSet);
@@ -75,7 +75,7 @@ export default function DashboardPage() {
     );
     setReviews_temp(filteredReviews);
     //ts-ignore
-    console.log(filteredReviews.length);
+    // console.log(filteredReviews.length);
   }
 
 
@@ -105,7 +105,7 @@ export default function DashboardPage() {
         console.log(data.result);
         setListings(data.result || []);
         setListings_temp(data.result || []);
-        console.log(listings)
+        // console.log(listings)
       } catch (err: any) {
 
       }
@@ -131,7 +131,7 @@ export default function DashboardPage() {
         }
 
         const data = await response.json();
-        console.log(data.result);
+        // console.log(data.result);
 
         let output = (data.result).filter((item: any) => item.type !== "host-to-guest");
         output = output.filter((item: any) => item.publicReview !== null);
@@ -139,7 +139,7 @@ export default function DashboardPage() {
 
         setReviews(output || []);
         setReviews_temp(output || []);
-        console.log(reviews)
+        // console.log(reviews)
       } catch (err: any) {
 
       }
@@ -148,7 +148,7 @@ export default function DashboardPage() {
     async function checkAndFetch() {
       console.log("Checking and fetching");
       const custmerData = await getCustomerData("registeredUsers").then((data) => {
-        console.log(data);
+        // console.log(data);
 
         if (data.updatedData === null) {
           console.log("No provider data found");

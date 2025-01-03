@@ -81,7 +81,7 @@ export default function ApiIntegrationBox () {
 
     async function getCustomerData_check() {
       const customerData = await getCustomerData("registeredUsers");
-      console.log(customerData); 
+      // console.log(customerData); 
       if (customerData.updatedData === null) {
         redirect("/login");
       }

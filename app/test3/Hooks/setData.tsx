@@ -42,7 +42,7 @@ export const setCustomerData = async (
 
       await setDoc(userRef, updatedData);
 
-      console.log(updatedData);
+      // console.log(updatedData);
 
       return updatedData ;
     } else {

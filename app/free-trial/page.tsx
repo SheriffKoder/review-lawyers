@@ -53,7 +53,7 @@ export default function FreeTrial() {
   }
 
   const errorSwitcher = (input:string) => {
-    console.log(input);
+    // console.log(input);
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -64,7 +64,7 @@ export default function FreeTrial() {
       formData
     );
 
-    console.log(result);
+    // console.log(result);
 
     if (result.userCredential) {
       redirect('/account');

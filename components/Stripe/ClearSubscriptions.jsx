@@ -37,7 +37,7 @@ export function ClearSubscriptions({userRef, userData, updateUser}) {
       const { uid } = user;
 
       const userRef_stripe = doc(db, "stripeCustomers", uid);
-      console.log(userRef_stripe);
+      // console.log(userRef_stripe);
 
       const customerDoc = await getDoc(userRef_stripe);
 
@@ -91,7 +91,7 @@ export function ClearSubscriptions({userRef, userData, updateUser}) {
       }
        await setDoc(userRef, updatedData);
 
-      console.log(updatedData);
+      // console.log(updatedData);
 
       updateUser(updatedData);
 

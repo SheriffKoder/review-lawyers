@@ -24,7 +24,7 @@ export function HeroContent() {
   ];
 
   return (
-    <div className="text-center space-y-16">
+    <div className="text-center pt-[15rem] relative">
       {/* AI Brain Logo Animation */}
       {/* <div className="flex items-center justify-center animate-fade-in pt-8">
         <div className="relative">
@@ -47,7 +47,7 @@ export function HeroContent() {
           </div>
         </div>
       </div> */}
-      <div className="flex items-center justify-center animate-fade-in pt-[7rem] min-h-[20vh]">
+      <div className="flex items-center justify-center animate-fade-in min-h-[20vh] absolute top-[-3rem] left-0 right-0">
         <HeroIcon />
 
       </div>

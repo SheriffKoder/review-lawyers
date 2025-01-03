@@ -27,7 +27,7 @@ export const doCreateUserWithEmailAndPassword = async (userData) => {
         // console.log(userData);
         // Create user in Firebase Authentication
         const userCredential = await createUserWithEmailAndPassword(auth, userData.email, userData.password);
-        console.log(userCredential);
+        // console.log(userCredential);
         const user = userCredential.user;
 
         // Add extra input registery fields to the Firestore storage area (db)
@@ -61,7 +61,7 @@ export const doSignInWithEmailAndPassword = async (email, password) => {
 
     const auth = getAuth();
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    console.log(userCredential.user); // Should return a valid user object
+    // console.log(userCredential.user); // Should return a valid user object
     
     const db = getFirestore();
     const userRef = doc(db, "registeredUsers", userCredential.user.uid);
@@ -87,7 +87,7 @@ export const doSignInWithGoogle = async () => {
     const result = await signInWithPopup(auth, provider);
 
     // save user's information into firestore
-    console.log(result.user);
+    // console.log(result.user);
 
     // Calculate the date 14 days from today
     const currentDate = new Date();
@@ -124,7 +124,7 @@ export const doSignInWithGoogle = async () => {
         paymentDate: Timestamp.fromDate(futureDate),
         status: "active",
     });
-        console.log("Document written with ID: ", docRef.id);
+        // console.log("Document written with ID: ", docRef.id);
     } catch (e) {
         console.error("Error adding document: ", e);
     }

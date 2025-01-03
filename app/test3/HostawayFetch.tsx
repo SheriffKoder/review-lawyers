@@ -23,7 +23,7 @@ const HostawayFetch = () => {
         }
 
         const data = await response.json();
-        console.log(data.result);
+        // console.log(data.result);
         setListings(data.result || []);
         setLoading(false);
       } catch (err: any) {

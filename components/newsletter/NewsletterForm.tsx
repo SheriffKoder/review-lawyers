@@ -65,7 +65,7 @@ export function NewsletterForm({ className }: NewsletterFormProps) {
     } catch (error) {
       setStatus('error');
       setMessage('Something went wrong. Please try again.');
-      console.log(error);
+      // console.log(error);
     }
   };
 
