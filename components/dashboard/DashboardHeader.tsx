@@ -8,27 +8,19 @@ import { cn } from '@/utils/cn';
 interface DashboardHeaderProps {
   onDateRangeChange: (range: { start: Date; end: Date }) => void;
   className?: string;
+  reviews_temp_switch: (reviews: any[]) => void;
+  tempReviews: any[];
 }
 
-export function DashboardHeader({ onDateRangeChange, className }: DashboardHeaderProps) {
+export function DashboardHeader({ onDateRangeChange, className, reviews_temp_switch, tempReviews }: DashboardHeaderProps) {
    
 
   return (
     <div className={cn("space-y-6", className)}>
-      <div className="flex justify-between items-start">
-        <h1 className="text-3xl font-bold text-white">Dashboard Demo</h1>
-        <div className="flex items-center gap-4">
-          <ReportsButton />
-          <Button 
-            onClick={() => redirect('/free-trial')}
-            className="bg-primary text-black hover:bg-primary/90"
-          >
-            Start Free Trial
-          </Button>
-        </div>
-      </div>
 
-      <DateRangeSelector onRangeChange={onDateRangeChange} />
+
+      <DateRangeSelector onRangeChange={onDateRangeChange} reviews_temp_switch={reviews_temp_switch} tempReviews={tempReviews}
+      />
     </div>
   );
 }

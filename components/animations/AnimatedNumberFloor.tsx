@@ -7,7 +7,7 @@ interface AnimatedNumberProps {
   formatter?: (value: number) => string;
 }
 
-export function AnimatedNumber({ 
+export function AnimatedNumberFloor({ 
   value, 
   duration = 1200,
   formatter = (val) => val.toLocaleString()
@@ -30,7 +30,7 @@ export function AnimatedNumber({
       const eased = 1 - Math.pow(1 - percentage, 3);
       const current = startValue.current + (value - startValue.current) * eased;
       
-      setDisplayValue(+current.toFixed(1));
+      setDisplayValue(current);
 
       if (percentage < 1) {
         frameId.current = requestAnimationFrame(animate);
@@ -46,5 +46,5 @@ export function AnimatedNumber({
     };
   }, [value, duration]);
 
-  return <>{formatter(displayValue)}</>;
+  return <>{formatter(Math.floor(displayValue))}</>;
 }

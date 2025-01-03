@@ -16,6 +16,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 // @ts-ignore
 import DeleteButton from '@/pages/AccountPage/DeleteButton';
+import { redirect } from 'next/navigation';
 
 const emptyUser = {
   email: "",
@@ -28,6 +29,11 @@ const emptyUser = {
   subscriptionDate: "",
   paymentDate: "",
   status: "",
+  provider: {
+    name: "",
+    key: "",
+    account: ""
+  }
 }
 
 
@@ -35,9 +41,14 @@ export default function AccountPage() {
 
 //////////////////////////////////////////////////////////////////
   // Firestore fetch
-  const { user } = useAuth(); // Assume your context provides the authenticated user
+  const { user } = useAuth() || {}; // Assume your context provides the authenticated user
   const [userData, setUserData] = useState(emptyUser);
 
+  console.log(user);
+
+  if (!user) {
+    redirect("/login");
+  }
   // console.log(user.providerData[0].providerId);
   const providerType = user.providerData[0].providerId;
   // const [loading, setLoading] = useState(true);

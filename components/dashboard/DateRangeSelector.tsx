@@ -1,11 +1,13 @@
 // @ts-nocheck
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Calendar } from 'lucide-react';
 import { cn } from '@/utils/cn';
 
 interface DateRangeProps {
   onRangeChange: (range: { start: Date; end: Date }) => void;
   className?: string;
+  reviews_temp_switch: (reviews: any[]) => void;
+  tempReviews: any[];
 }
 
 const PRESET_RANGES = [
@@ -13,20 +15,117 @@ const PRESET_RANGES = [
   { label: 'Last 30 days', days: 30 },
   { label: 'Last 90 days', days: 90 },
   { label: 'Year to date', days: 'ytd' },
+  { label: 'All time', days: 'ytd' },
   { label: 'Custom', days: 'custom' }
 ] as const;
 
-export function DateRangeSelector({ onRangeChange, className }: DateRangeProps) {
-  const [selectedRange, setSelectedRange] = useState(PRESET_RANGES[1].label);
+export function DateRangeSelector({ onRangeChange, className, reviews_temp_switch, tempReviews }: DateRangeProps) {
+  const [selectedRange, setSelectedRange] = useState("All time");
   const [customDates, setCustomDates] = useState({
     start: new Date(),
     end: new Date()
   });
   const [isCustom, setIsCustom] = useState(false);
 
+
+  function filterReviewsByDate(reviews, label) {
+    if (!Array.isArray(reviews)) {
+      throw new Error("The 'reviews' parameter must be an array.");
+    }
+  
+    const today = new Date();
+    let startDate;
+  
+    switch (label) {
+      case "Last 7 days":
+        startDate = new Date();
+        startDate.setDate(today.getDate() - 7);
+        break;
+  
+      case "Last 30 days":
+        startDate = new Date();
+        startDate.setDate(today.getDate() - 30);
+        break;
+  
+      case "Last 90 days":
+        startDate = new Date();
+        startDate.setDate(today.getDate() - 90);
+        break;
+  
+      case "Year to date":
+        startDate = new Date();
+        startDate.setFullYear(today.getFullYear() - 1);
+        break;
+
+        case "All time":
+          startDate = new Date();
+          startDate.setFullYear(today.getFullYear() - 100);
+          break;
+  
+      default:
+        throw new Error("Invalid label provided.");
+    }
+  
+    // Filter reviews based on the submittedAt date
+    return reviews.filter((review) => {
+      // Parse the date in "YYYY-MM-DD HH:mm:ss" format
+      if(review.submittedAt !== null) {
+      const [datePart, timePart] = review.submittedAt.split(" ");
+      // console.log(datePart);
+      const [year, month, day] = datePart.split("-").map(Number);
+      const [hours, minutes, seconds] = timePart.split(":").map(Number);
+  
+      const submittedAt = new Date(year, month - 1, day, hours, minutes, seconds);
+  
+      return submittedAt >= startDate && submittedAt <= today;
+      }
+    });
+  }
+  
+  function filterReviewsByDateRange(start, end) {
+    // Validate input dates
+    if (!start || !end) {
+      throw new Error("Both start and end dates must be provided.");
+    }
+  
+    // Convert start and end dates to Date objects
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+  
+    // Validate the date objects
+    if (isNaN(startDate) || isNaN(endDate)) {
+      throw new Error("Invalid date format. Dates must be in ISO format.");
+    }
+  
+    // Filter tempReviews
+    const filteredReviews = tempReviews.filter((review) => {
+      if (!review.submittedAt) return false; // Skip reviews without submittedAt property
+  
+      // Convert submittedAt to a Date object
+      const [datePart, timePart] = review.submittedAt.split(" ");
+      const [year, month, day] = datePart.split("-").map(Number);
+      const [hours, minutes, seconds] = timePart.split(":").map(Number);
+      const reviewDate = new Date(year, month - 1, day, hours, minutes, seconds);
+  
+      // Check if the reviewDate is within the range
+      return reviewDate >= startDate && reviewDate <= endDate;
+    });
+  
+    return filteredReviews;
+  }
+  
   const handleRangeSelect = (range: typeof PRESET_RANGES[number]) => {
     setSelectedRange(range.label);
-    
+    console.log(range.label);
+
+    if (range.days !== 'custom') {
+      let temp_reviews = filterReviewsByDate(tempReviews, range.label);
+      console.log(temp_reviews);
+      reviews_temp_switch(temp_reviews);
+    }
+
+
+
     if (range.days === 'custom') {
       setIsCustom(true);
       return;
@@ -52,12 +151,29 @@ export function DateRangeSelector({ onRangeChange, className }: DateRangeProps) 
     };
     setCustomDates(newDates);
     onRangeChange(newDates);
+    console.log(newDates);
+
+    const {end, start} = newDates;
+
+    let temp_reviews = filterReviewsByDateRange(start, end);
+    console.log(temp_reviews);
+    reviews_temp_switch(temp_reviews);
+    
+
+
+
   };
+
+  useEffect(() => {
+    console.log("temp changed, this is date")
+  }, [tempReviews])
 
   return (
     <div className={cn("space-y-4", className)}>
       {/* Preset Range Buttons */}
       <div className="flex flex-wrap gap-2">
+      <h2 className='text-white text-base font-bold my-auto'>By Review Date</h2>
+
         {PRESET_RANGES.map((range) => (
           <button
             key={range.label}
@@ -76,7 +192,7 @@ export function DateRangeSelector({ onRangeChange, className }: DateRangeProps) 
               ]
             )}
           >
-            <Calendar className="w-4 h-4" />
+            <Calendar className={`w-4 h-4 ${selectedRange === range.label ? "text-black" : "text-white"}`}/>
             {range.label}
           </button>
         ))}
@@ -118,6 +234,10 @@ export function DateRangeSelector({ onRangeChange, className }: DateRangeProps) 
               )}
             />
           </div>
+          <button className='bg-primary text-black px-4 py-2 rounded-lg mt-auto' onClick={() => {
+            setIsCustom(false);
+            // onRangeChange({ start: new Date(), end: new Date() });
+          }}>Close</button>
         </div>
       )}
     </div>

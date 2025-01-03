@@ -26,13 +26,22 @@ export default function FreeTrial() {
 //   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    fullName: '',
-    businessName: '',
-    businessType: 'rental' as const,
-    listingCount: '',
-    plan: ''  // will be trial by the subs function
+    email: "",
+  password: "",
+  businessName: "",
+  businessType: "",
+  fullName: "",
+  listingCount: 0,
+  plan: "",
+  subscriptionDate: "",
+  paymentDate: "",
+  status: "",
+  provider: {
+    name: "",
+    apiKey: "",
+    type: "",
+    accountId: ""
+  }
   });
 
   // firebase
@@ -58,7 +67,7 @@ export default function FreeTrial() {
     console.log(result);
 
     if (result.userCredential) {
-      redirect('/dashboard');
+      redirect('/account');
     } else if (result.error) {
       // @ts-ignore
       setError(result.error.code.split("auth/"));

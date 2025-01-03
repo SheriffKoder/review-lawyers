@@ -10,9 +10,11 @@ interface DashboardTabsProps {
   businessType: 'rental' | 'restaurant';
   platform: string;
   rating: number | null;
+  tempListings: any[];
+  tempReviews: any[];
 }
 
-export function DashboardTabs({ className, businessType, platform, rating }: DashboardTabsProps) {
+export function DashboardTabs({ className, businessType, platform, rating, tempListings, tempReviews }: DashboardTabsProps) {
   const [activeTab, setActiveTab] = useState('active');
 
   const tabs = [
@@ -23,11 +25,11 @@ export function DashboardTabs({ className, businessType, platform, rating }: Das
 
   return (
     <div className={cn("space-y-6", className)}>
-      <TabNavigation
+      {/* <TabNavigation
         tabs={tabs}
         activeTab={activeTab}
         onChange={setActiveTab}
-      />
+      /> */}
 
       <div className="transition-all duration-300">
         {activeTab === 'active' && (
@@ -35,21 +37,23 @@ export function DashboardTabs({ className, businessType, platform, rating }: Das
             businessType={businessType}
             platform={platform}
             rating={rating}
+            tempReviews={tempReviews}
+            tempListings={tempListings}
           />
         )}
-        {activeTab === 'resolved' && (
+        {/* {activeTab === 'resolved' && (
           <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
             <h2 className="text-xl font-bold text-white mb-4">Resolved Cases</h2>
-            {/* Add resolved cases content */}
+
           </div>
-        )}
-        {activeTab === 'analytics' && (
+        )} */}
+        {/* {activeTab === 'analytics' && (
           <AnalyticsOverview 
             businessType={businessType}
             platform={platform}
             rating={rating}
           />
-        )}
+        )} */}
       </div>
     </div>
   );

@@ -94,3 +94,24 @@ body::before {
 .cardInput:hover {
   border: 1px solid #17d8ff;
 }
+
+
+.dashboardReview {
+  position: relative;
+  max-width: 100%; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.dashboardReview p {
+  display: block;
+  white-space: nowrap; /* Ensures text stays on one line */
+  overflow: hidden; /* Hides overflow content */
+  text-overflow: ellipsis; /* Adds the ellipsis */
+  transition: all 0.3s ease; /* Smooth transition when hovering */
+}
+
+.dashboardReview:hover p {
+  white-space: normal; /* Allows multiline text */
+  overflow: visible; /* Shows all content */
+  text-overflow: unset; /* Removes the ellipsis */
+}

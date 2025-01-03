@@ -34,6 +34,7 @@ export const doCreateUserWithEmailAndPassword = async (userData) => {
         // set doc allows to add users with our user.uid
         const userRef = doc(db, "registeredUsers", user.uid); // Specify the document path
         await setDoc(userRef, {
+            ...userData,
         email: user.email,
         businessName: userData.businessName,
         businessType: userData.businessType,

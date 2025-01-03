@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/api/hostaway/hostaway-listings/route.js", "components/dashboard/filters/DropDownSelect.tsx"  ],
   "exclude": [
     "**/*.js",
     "**/*.jsx",

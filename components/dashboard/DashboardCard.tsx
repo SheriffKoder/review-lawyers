@@ -47,7 +47,7 @@ export function DashboardCard({
               {title}
             </p>
             <p className="text-2xl font-bold text-white mt-2 group-hover:text-primary transition-colors">
-              <AnimatedNumber 
+              <AnimatedNumber
                 value={numericValue}
                 formatter={formatter}
               />
