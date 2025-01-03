@@ -44,7 +44,7 @@ export default function AccountPage() {
   const { user } = useAuth() || {}; // Assume your context provides the authenticated user
   const [userData, setUserData] = useState(emptyUser);
 
-  console.log(user);
+  // console.log(user);
 
   if (!user) {
     redirect("/login");
