@@ -44,23 +44,23 @@ const MultiSelectDropdown = ({ listings, tempListings, listings_temp_switch }: L
         if (isAlreadySelected) {
             // Remove the listing if it exists
             const temp = selectedListings.filter((item) => item.id !== listing.id);
-            // console.log("After removal:", temp);
+            console.log("After removal:", temp);
+            listings_temp_switch(temp);
             setSelectedListings(temp);
 
             // Call the function with the updated array
-            listings_temp_switch(temp);
         } else {
             // Add the listing if it doesn't exist
             const temp = [...selectedListings, listing];
-            // console.log("After addition:", temp);
+            console.log("After addition:", temp);
+            listings_temp_switch(temp);
             setSelectedListings(temp);
 
             // Call the function with the updated array
-            listings_temp_switch(temp);
         }
         
 
-        listings_temp_switch(selectedListings);
+        // listings_temp_switch(selectedListings);
     };
 
     const clearListings = () => {
