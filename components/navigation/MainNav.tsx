@@ -27,7 +27,7 @@ export function MainNav({ className }: MainNavProps) {
     // },
     {
       label: 'Review Advocacy',
-      href: '/reviewAvocacy',
+      href: '/reviewAdvocacy',
       description: 'Professional review defense service'
     },
     {
