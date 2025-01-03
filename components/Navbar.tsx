@@ -22,7 +22,7 @@ export default function Navbar() {
             aria-label="Review Lawyers+ Home"
           >
             <Shield className="h-7 w-7 text-primary transition-transform group-hover:scale-110" />
-            <span className="text-lg font-semibold text-black dark:text-white whitespace-nowrap">
+            <span className="text-lg font-semibold text-white whitespace-nowrap">
               Review Lawyers+
             </span>
           </Link>
